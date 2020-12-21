@@ -1,0 +1,36 @@
+html {
+    font-size: 14px;
+}
+
+.blog-masthead {
+    background-color: #b34848;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #b34848;
+}
+
+.blog-post-title>a {
+    color: #b34848;
+}
+
+.blog-post-title>a:hover {
+    color: #b34848;
+}
+
+.comments-container {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.comments-line-break {
+    width: 100%;
+    border: #999 0,2px solid;
+}
+
+
+.btn-create-comment {
+    width: 80px;
+    margin-top: 10px;
+}
