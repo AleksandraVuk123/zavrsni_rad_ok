@@ -1,3 +1,21 @@
+<?php
+    $index = null;
+
+    if (isset($_GET['index'])) {
+        $index=$_GET['index'];
+    
+    
+        require('database.php');
+        
+        $sqlSelect = "SELECT * FROM posts WHERE id=?";
+        $statement = $connection->prepare($sqlSelect);
+        $statement->execute([$index]);
+        $statement->setFetchMode(PDO::FETCH_ASSOC);
+        $singleBlog = $statement->fetch();
+    }
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,28 +36,9 @@
 
 <?php include 'header.php'; ?>
 
-<main role="main" class="container">
+<?php include 'sidebar.php'; ?>  
 
-    <div class="row">
-    
-        <div class="col-sm-8 blog-main">
-
-        <?php include 'posts.php'; ?>
-            
-            <nav class="blog-pagination">
-                <a class="btn btn-outline-primary" href="#">Older</a>
-                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-            </nav>
-
-        </div><!-- /.blog-main -->
-        
-        <?php include 'sidebar.php'; ?>  
-    
-    </div><!-- /.row -->
-
-</main><!-- /.container -->
-
-<?php include'footer.php'; ?>
+<?php include 'footer.php'; ?>
 
 </body>
 </html>

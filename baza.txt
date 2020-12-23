@@ -24,5 +24,22 @@ INSERT INTO posts (title, body, author, created_at) VALUES
                   ("Naslov 3", "Neki tekst bilo sta bla bla bla", "Mika Mikic", "2020-12-23 18:42:13");     
 DESCRIBE posts;
 SELECT * FROM posts;
+
+CREATE TABLE comments (
+                        id INT AUTO_INCREMENT,
+                        author VARCHAR(255) NOT NULL,
+                        text VARCHAR(555) NOT NULL,
+                        post_id INT NOT NULL,
+                        PRIMARY KEY (id),
+                        FOREIGN KEY (post_id) REFERENCES posts(id)
+                      );
+
+DESCRIBE comments;
+
+INSERT INTO comments (author, text, post_id) VALUES ("Zika Zikic", "Neki komentar bla bla bla", 1); 
+INSERT INTO comments (author, text, post_id) VALUES ("Rade Radic", "Neki komentar bla bla bla", 2); 
+INSERT INTO comments (author, text, post_id) VALUES ("Maja Majic", "Neki komentar bla bla bla", 3); 
+
+SELECT * FROM comments;
                   
                   
