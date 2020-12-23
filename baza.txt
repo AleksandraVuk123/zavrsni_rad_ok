@@ -1,0 +1,28 @@
+DROP DATABASE blog;
+
+CREATE DATABASE blog;
+USE blog; 
+
+DROP TABLE posts;
+
+CREATE TABLE posts (
+                    id INT AUTO_INCREMENT,
+                    title VARCHAR(555) NOT NULL,
+                    body VARCHAR(2500) NOT NULL,
+                    author VARCHAR(255) NOT NULL,
+                    created_at TIMESTAMP,
+                    PRIMARY KEY (id)
+                    ); 
+                    
+DESCRIBE posts;
+
+INSERT INTO posts (title, body, author, created_at) VALUES 
+                  ("Naslov 1", "Neki tekst bilo sta bla bla bla", "Pera Peric", "2020-12-23 18:37:13");
+INSERT INTO posts (title, body, author, created_at) VALUES 
+                  ("Naslov 2", "Neki tekst bilo sta bla bla bla", "Jova Jovic", "2020-12-23 18:39:13");
+INSERT INTO posts (title, body, author, created_at) VALUES 
+                  ("Naslov 3", "Neki tekst bilo sta bla bla bla", "Mika Mikic", "2020-12-23 18:42:13");     
+DESCRIBE posts;
+SELECT * FROM posts;
+                  
+                  
